@@ -63,7 +63,9 @@ class Page extends React.Component {
             {listItems}
           </List>
         </div>
-        <Button inline type="primary" className="next" size="small" onClick={this.next}>下一页</Button>
+        <div className="btn-wrap">
+          <Button inline type="primary" className="next" size="small" onClick={this.next}>下一页</Button>
+        </div>
       </div>
     )
   }
