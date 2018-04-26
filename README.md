@@ -58,13 +58,13 @@
 #### 按需加载
 
 为了优化加载，避免一次性加载所有的路由导致卡顿。我们采用了路由按需加载。
-
 ```
 // 安装依赖
 npm i -D babel-plugin-syntax-dynamic-import
 npm i -S react-loadable
+```
 
-
+```js
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
