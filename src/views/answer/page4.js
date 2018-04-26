@@ -13,8 +13,8 @@ class Page4 extends React.Component {
     super(props);
     this.state = {
       question: '4、为什么规定辅路车让主路车先行？',
-      options: ['每1年', '每3年', '每2年', '每6个月'],
-      answer: '每1年',
+      options: ['便于观察，有利于安全', '右侧为快速车道', '左侧为慢速车道', '我国实行左侧通行原则'],
+      answer: '便于观察，有利于安全',
       value: 0,
     }
     this.nextPage = this.nextPage.bind(this);
