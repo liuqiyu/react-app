@@ -17,4 +17,10 @@
       font-size: 18px;
     }
   }
+
+  .nav-item.active {
+    span, p {
+      color: #409EFF;
+    }
+  }
 }

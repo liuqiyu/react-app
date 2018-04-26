@@ -5,6 +5,8 @@
 
 import React from 'react';
 import Page from './../../components/page/page1'
+import { currentNavIndex } from '../../store/action'
+import { connect } from 'react-redux'
 
 class Page3 extends React.Component {
   constructor (props) {
@@ -21,6 +23,10 @@ class Page3 extends React.Component {
     this.props.history.push('/qpage4');
   }
   
+  componentDidMount() {
+    this.props.currentNavIndex('2');
+  }
+  
   render() {
     return (
       <Page question={this.state.question} options={this.state.options} nextPage={this.nextPage} answer={this.state.answer}></Page>
@@ -28,4 +34,8 @@ class Page3 extends React.Component {
   }
 }
 
-export default Page3;
+export default connect(state => ({
+  text: state.text,
+}), {
+  currentNavIndex,
+})(Page3);

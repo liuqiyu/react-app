@@ -5,8 +5,15 @@
 
 import React from 'react';
 import './complete.scss';
+import { currentNavIndex } from '../../../store/action'
+import { connect } from 'react-redux'
 
 class Complete extends React.Component {
+  
+  componentDidMount() {
+    this.props.currentNavIndex('1');
+  }
+  
   render() {
     return (
       <div className="complete">
@@ -17,4 +24,8 @@ class Complete extends React.Component {
   }
 }
 
-export default Complete;
+export default connect(state => ({
+  text: state.text,
+}), {
+  currentNavIndex,
+})(Complete);

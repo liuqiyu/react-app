@@ -6,6 +6,8 @@
 import React from 'react';
 import { Button } from 'antd-mobile';
 import './index.scss';
+import { currentNavIndex } from '../../../store/action'
+import { connect } from 'react-redux'
 
 class Question extends React.Component {
   constructor (props) {
@@ -17,6 +19,10 @@ class Question extends React.Component {
     this.props.history.push('/qpage1');
   };
   
+  componentDidMount() {
+    this.props.currentNavIndex('2');
+  }
+  
   render() {
     return (
       <div className="question-wrap">
@@ -26,4 +32,8 @@ class Question extends React.Component {
   }
 }
 
-export default Question;
+export default connect(state => ({
+  text: state.text,
+}), {
+  currentNavIndex,
+})(Question);

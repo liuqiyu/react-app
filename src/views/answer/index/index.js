@@ -5,6 +5,8 @@
 
 import React from 'react';
 import { Button } from 'antd-mobile';
+import { connect } from 'react-redux'
+import { currentNavIndex } from './../../../store/action'
 import './index.scss';
 
 class Answer extends React.Component {
@@ -17,13 +19,22 @@ class Answer extends React.Component {
     this.props.history.push('/page1');
   };
   
+  componentDidMount() {
+    this.props.currentNavIndex('1');
+  }
+  
+  
   render() {
     return (
       <div className="answer">
-        <Button className="button" type="primary" inline onClick={this.start}>开始答题</Button>
+        <Button className="button" type="warning" inline onClick={this.start}>开始答题</Button>
       </div>
     )
   }
 }
 
-export default Answer;
+export default connect(state => ({
+  text: state.text,
+}), {
+  currentNavIndex,
+})(Answer);

@@ -3,7 +3,7 @@
  * create by lqy 2018/4/25
  */
 import React from 'react';
-import { List, Radio, Toast, Button, Icon } from 'antd-mobile';
+import { List, Radio, Button } from 'antd-mobile';
 import './page.scss';
 
 const RadioItem = Radio.RadioItem;

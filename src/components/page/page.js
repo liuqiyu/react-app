@@ -7,7 +7,7 @@ import { List, Radio, Toast, Button, Icon } from 'antd-mobile';
 import './page.scss';
 
 function failToast() {
-  Toast.fail('请选择答案！', 1);
+  Toast.offline('请选择答案！', 1);
 }
 
 const RadioItem = Radio.RadioItem;
@@ -103,7 +103,7 @@ class Page extends React.Component {
           </div>
           ) : null }
         <Button inline type="primary" className="submit" size="small" onClick={this.submit} disabled={this.state.disabled}>提交</Button>
-        {this.state.showNext ? <Button inline type="primary" className="next" size="small" onClick={this.next}>下一页</Button> : null}
+        {this.state.showNext ? <Button inline type="primary" className="next" size="small" onClick={this.next}>下一题</Button> : null}
       </div>
     )
   }

@@ -5,6 +5,8 @@
 
 import React from 'react';
 import Page from './../../components/page/page'
+import { currentNavIndex } from '../../store/action'
+import { connect } from 'react-redux'
 
 class Page5 extends React.Component {
   constructor (props) {
@@ -29,6 +31,10 @@ class Page5 extends React.Component {
     this.props.history.push('/complete');
   }
   
+  componentDidMount() {
+    this.props.currentNavIndex('1');
+  }
+  
   render() {
     return (
       <Page question={this.state.question} options={this.state.options} nextPage={this.nextPage} choose={this.choose} answer={this.state.answer}></Page>
@@ -36,4 +42,8 @@ class Page5 extends React.Component {
   }
 }
 
-export default Page5;
+export default connect(state => ({
+  text: state.text,
+}), {
+  currentNavIndex,
+})(Page5);
