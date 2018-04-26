@@ -9,18 +9,6 @@
     margin-bottom: 20px;
     padding: 10px 10px 0 10px;
   }
-  .next {
-    font-size: 14px !important;
-    position: absolute !important;
-    right: 100px;
-    bottom: 30px;
-  }
-  .submit {
-    font-size: 14px !important;
-    position: absolute !important;
-    right: 20px;
-    bottom: 30px;
-  }
   .answer {
     text-align: center;
     color: #fff;
@@ -35,6 +23,19 @@
         font-weight: bold;
         margin-top: 5px;
       }
+    }
+  }
+
+  .btn-wrap {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    .submit {
+      font-size: 14px !important;
+    }
+    .next {
+      font-size: 14px !important;
+      margin-left: 20px;
     }
   }
 }

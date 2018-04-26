@@ -102,8 +102,10 @@ class Page extends React.Component {
             }
           </div>
           ) : null }
-        <Button inline type="primary" className="submit" size="small" onClick={this.submit} disabled={this.state.disabled}>提交</Button>
-        {this.state.showNext ? <Button inline type="primary" className="next" size="small" onClick={this.next}>下一题</Button> : null}
+          <div className="btn-wrap">
+            {!this.state.showNext ? <Button inline type="primary" className="next" size="small" onClick={this.submit}>提交</Button> : null}
+            {this.state.showNext ? <Button inline type="ghost" className="next" size="small" onClick={this.next}>下一题</Button> : null}
+          </div>
       </div>
     )
   }
