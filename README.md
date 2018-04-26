@@ -10,6 +10,7 @@
 * [文件夹结构](#structure)
 * [react-router](#router)
 * [redux](#redux)
+* [预览地址](#preview)
 
 
 <a name="technology"></a>
@@ -58,11 +59,15 @@
 #### 按需加载
 
 为了优化加载，避免一次性加载所有的路由导致卡顿。我们采用了路由按需加载。
+
+> 安装依赖
+
 ```
-// 安装依赖
 npm i -D babel-plugin-syntax-dynamic-import
 npm i -S react-loadable
 ```
+
+> 核心代码
 
 ```js
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
@@ -89,13 +94,12 @@ const Home = Loadable({
   loading: loadingComponent
 });
 
-...
 <Router>
      <Switch>
         <Route path='/' component={Home} exact></Route>
      </Switch>
 </Router>
-...
+
 ```
 
 <a name="redux"></a>
@@ -119,6 +123,17 @@ npm install --save react-redux
     ├── reducer.js
     ├── index.js
 ```
+
+<a name="preview"></a>
+
+## preview
+
+<img src="QRcode.png" width="300"/>
+
+[点击预览](https://liuqiyu.github.io/subject-1/build/#/)
+
+
+
 
 
 
